@@ -1,0 +1,3 @@
+Part 1 - we need to do a binary search using B and F.  Use a min and max, and if the letter is F then set max to half of the gap, or if B is the letter then set min to half of the gap.  Repeat until out of letters, at which point min and max should converge.
+
+Part 2 - just do a simple iteration through the list till we find one where the next seatId isn't "+1", and the missing number must be our seat.
