@@ -6,6 +6,8 @@ const dl = log => { if (debug) console.log(log); };
 //const file = await open("./sample-input.txt");
 const file = await open("./full-input.txt");
 
+const t0 = performance.now();
+
 let colorMap = {};
 for await (const line of file.readLines()) {
     let split1 = line.split(" bags contain ");
@@ -21,13 +23,14 @@ for await (const line of file.readLines()) {
 }
 
 let queue = Object.keys(colorMap);
-
+let cycles = 0;
 while (queue.length > 0) {
     let containerColor = queue.shift();
     let colors = Object.keys(colorMap[containerColor]);
     let updated = false;
     colors.forEach(c => {
         let subColors = Object.keys(colorMap[c]);
+        cycles++;
         subColors.forEach(subc => {
             if (!colorMap[containerColor][subc]) {
                 colorMap[containerColor][subc] = colorMap[containerColor][c] * colorMap[c][subc];
@@ -43,5 +46,7 @@ dl(JSON.stringify(colorMap));
 
 const findColor = "shiny gold";
 let foundCount = Object.keys(colorMap).filter(c => colorMap[c][findColor] != undefined).length;
+const t1 = performance.now();
+console.log(`Call to doSomething took ${t1 - t0} milliseconds for ${cycles} cycles.`);
 
 console.log(`Found count ${foundCount}`);

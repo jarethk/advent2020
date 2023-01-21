@@ -1,0 +1,3 @@
+Part 1 - create a map from the input of colors, and use a processing queue to peek into nested layers to add to the map for each color.
+
+Part 2 - this one took a couple tries.  For each input need to keep the size based on colors held, and a list of colors held.  Then use a queue starting with the target one to process each.  If the color contains other colors that haven't been processed then put it back into the queue, and add the nested colors to the queue.  If the color contains no other colors then set its size to 0, or if all the contained colors have been processed add up all their sizes, with a plus one for each to count that nested color.  
