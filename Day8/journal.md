@@ -1,0 +1,3 @@
+Part 1 - parse the inputs into an array with the operation and value.  Starting at command index 0, set each command as visited and process the command until we visit a command that has already been visited.
+
+Part 2 - run the cycle from part 1, capturing ever step in a stack.  Then loop through that stack, if the step is "nop" or "jmp" run the cycle from that point with that op flipped.  If it actually got to the end then we can call it success and not worry about trying the rest.
