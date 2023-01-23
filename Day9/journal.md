@@ -1,0 +1,3 @@
+Part 1 - we need to find some combination of the last 25 (preamble) numbers that add up to our 26th number.  So keep a rolling list of 25 numbers, and use the same algorithm from Day 1 to see if there is a match.  Stop on the first one that doesn't have a hit.
+
+Part 2 - we need to find some set of numbers that match our invalid number.  Create a simple function like our algorithm from Day 1 that keeps an array of numbers we're adding.  Keep adding more numbers until we either hit our sum and return that set as the result, or exceed our sum at which point we start our set at the next point with a fresh array.  Oh, and remember to sort and shift/pop to get the first and last number.

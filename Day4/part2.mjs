@@ -48,7 +48,6 @@ passList.forEach(p => {
                 iyrRE.test(p[6][1]) &&
                 pidRE.test(p[7][1])) {
                 validCount++;
-
             } else {
                 console.log(`--Invalid passport: ${JSON.stringify(p)}`);
                 if (!byrRE.test(p[0][1])) console.log(`Validate byr: ${p[0][1]}: ${byrRE.test(p[0][1])}`);
