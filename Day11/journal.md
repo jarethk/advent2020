@@ -1,0 +1,3 @@
+Part 1 - we have to run cycles evaluating the map, with a key point that every cell is evaluated at the same time.  That means we're always building a new map based on evaluating the prior map.  Keep tabs on how many cells are changed each time we generate the new map, and stop cycling if we run with no changes.  Couple optimizations, like using a list of adjacent positions with a map function to get values of the adjacent cells, and then filtering/counting the occupied ones. 
+
+Part 2 - some minor adjustments.  Since we used a function to get the adjacent seat, we add a loop to that constantly applying the adjacent modifier while we keep finding ".".  And one other minor adjustment to the number of occupied seats we check for.
