@@ -1,0 +1,1 @@
+Part 1 - we're in a boat being tossed around.  We need some utilities to handle compass directions, turning, and changing position based on direction and amount we're moving.  
