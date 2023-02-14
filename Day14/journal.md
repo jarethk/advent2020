@@ -1,0 +1,3 @@
+Part 1 - fun with bitwise operators.  From the mask input we need to generate 2 masks: an or mask to add in the 1, and an and mask to remove the 0.  These are big numbers we are dealing with, so use BigInt for the value processing.
+
+Part 2 - this one took a couple loops around, and a reread of the processing rules.  It is no longer bitwise operators.  We have to merge together the mask and the binary representation of the register, keeping the register if the mask is 0, but keeping the mask for other values.  Then we need to generate all of the permutations from the merged register, where X transforms into both 0 and 1.  The twist again is the need to use BigInt for the calculated registers.
