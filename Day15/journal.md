@@ -1,0 +1,1 @@
+Part 1 - first let's set this up so we can run the multiple sample inputs sequentially in one run.  For running the game, keep two things.  First keep an array of every play, for debugging later.  The real processing is in every round we calculate the gap between the current value and the last time it was used, and use that as our new value in the next round.
