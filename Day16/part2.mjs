@@ -7,8 +7,8 @@ import { inRange } from 'lodash-es';
 const debug = 1;
 const dl = log => { if (debug) console.log(log); };
 
-const file = await open("./sample-input2.txt");
-//const file = await open("./full-input.txt");
+//const file = await open("./sample-input2.txt");
+const file = await open("./full-input.txt");
 
 const t0 = performance.now();
 
@@ -38,23 +38,15 @@ for await (const line of file.readLines()) {
     }
 }
 
-let vt = nearbyTickets.filter(ticket => {
-    if (ticket.every(v => {
-        dl(`filtering ticket ${ticket}`)
-        if (rules.some(r => { return (inRange(v, r.r1min, r.r1max) || inRange(v, r.r2min, r.r2max)) })) {
-            dl(`some rules valid for ticket ${ticket} value ${v}`);
-            return true;
-        } else {
-            return false;
-        }
-    })) {
-        dl(`ticket valid: ${ticket}`);
-        return true;
-    } else {
-        return false;
-    }
-});
+// find the tickets that are valid, remembering from day 1 that some are not
+let vt = nearbyTickets.filter(ticket =>
+    ticket.every(v =>
+        rules.some(r => { return (inRange(v, r.r1min, r.r1max) || inRange(v, r.r2min, r.r2max)) })
+    )
+);
 dl(`valid tickets: ${vt.length}`)
+
+// use the valid tickets to pre-filter the rules, for each rule updating the fields it applies to, creating a kind-of matching grid
 vt.forEach(ticket => {
     ticket.forEach((v, idx) => {
         rules.forEach(r => {
@@ -87,13 +79,10 @@ dl(rules.map(r => JSON.stringify(r)).join("\n"));
 dl(fieldRuleIdx)
 
 let departures = 1;
-rules.filter(r => r.label.startsWith('departure')).forEach(r => {
-    r.fields.forEach((f, idx) => {
-        if (f) {
-            //dl(`departure rule on field ${idx}`)
-            departures *= myTicket[idx];
-        }
-    })
+fieldRuleIdx.forEach((ridx, fidx) => {
+    if (rules[ridx].label.startsWith('departure')) {
+        departures *= myTicket[fidx];
+    }
 });
 
 console.log(`departures: ${departures}`)
