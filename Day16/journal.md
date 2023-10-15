@@ -1,0 +1,3 @@
+Part 1 - it took me two passes to get this.  My second pass used a cleaner approach to parsing the input using regex to figure what type of line I'm dealing with, and remembering the difference between Array.some() and Array.every().
+
+Part 2 - so for this one we have to figure out which rule applies to which field.  With invalid field values on tickets, we cannot rely on a simple boolean flipped to false on invalid fields.  So start with keeping counters for each rule for each field where it confirms the value is valid, and pick the highest rate.
