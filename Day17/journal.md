@@ -1,1 +1,3 @@
-Part 1 - it seemed like a simple game of life, but the examples didn't quite make sense.  It wasn't until I got the game of life working that it started to make sense.  In their example after 1 cycle they removed the top two rows which were blank, so what appears in their example as y=0 is really y=2.  
+Part 1 - it seemed like a simple game of life, but the examples didn't quite make sense.  It wasn't until I got the game of life working that it started to make sense.  In their example after 1 cycle they removed the top two rows which were blank, so what appears in their example as y=0 is really y=2.  After a first successful implementation, I was certain I could do a cleaner and sleaker solution with Array methods.
+
+Part 2 - Second verse, same as the first, with one small added dimension.  No big deal.  Expand my space.js library with the grids for a 4th dimension.
