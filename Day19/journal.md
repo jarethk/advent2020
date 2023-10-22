@@ -1,0 +1,3 @@
+Part 1 - create a queue of rules to process, created iteratively starting from rule "0" and cycling through the new rules.  Do a little deduplication with a Set for efficiency.
+
+Part 2 - the change to rule "8" is easy, just add a "+" because it is one rule repeating.  The change to rule "11" is a bit more complex, creating nesting pairs, which you can't do very effectively with regular expression.  So introduce a bit of brute force, adding alternate patterns with 2, 3, and 4 repeats.
