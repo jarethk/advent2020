@@ -1,2 +1,3 @@
 Part 1 - this seems a fairly straight-forward string tokenizer, some basic math, with a little bit of recursion from the parenthesis.
-Part 2 - now we have some order of operations.  So treat a * like the opening of a parenthesis, or if this is a second * then treat it like the closing.  The formulas got tricky when we did that with a parenthesis right after a *.
+
+Part 2 - now we have some order of operations.  So treat a * like the opening of a parenthesis, or if this is a second * then treat it like the closing.  The formulas got tricky when we did that with a parenthesis right after a *.  First attempt was a dud.  So for a second attempt I process in two phases.  First phase I convert what is inside the parens into arrays, then do a depth-first processing of the arrays
