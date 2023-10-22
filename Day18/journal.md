@@ -1,0 +1,2 @@
+Part 1 - this seems a fairly straight-forward string tokenizer, some basic math, with a little bit of recursion from the parenthesis.
+Part 2 - now we have some order of operations.  So treat a * like the opening of a parenthesis, or if this is a second * then treat it like the closing.  The formulas got tricky when we did that with a parenthesis right after a *.
