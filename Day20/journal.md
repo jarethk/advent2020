@@ -1,0 +1,3 @@
+Part 1 - this is a double-sided jigsaw puzzle.  For every piece, we want to pre-calculate the edges for every rotation and flip, a total of 8 options.  We can shortcut this first part, looking only for the corner pieces which would line up with only 2 other pieces each.
+
+Part 2 - We need now to get the whole picture.  Previously I was just doing the edges, so now have to deal with the full piece, or more accurately the middle section which excludes the edges.  For some reason I struggled with algorithm to rotate and flip the full frame, but got it right after a couple of tries.
