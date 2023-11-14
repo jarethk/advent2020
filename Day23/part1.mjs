@@ -24,12 +24,6 @@ for (let cycle = 0; cycle < MAX_CYCLE; cycle++) {
         destination--;
         if (destination < min) destination = max;
     } while (removed.includes(destination));
-    /*
-    let scups = [...cups].sort((a, b) => b - a);
-    let destination = scups.find(v => v <= current - 1);
-    dl(`destination: ${destination} from ${current - 1} in ${JSON.stringify(scups)}`)
-    if (destination == undefined) destination = scups[0];
-    */
     dl(`destination: ${destination}`)
     let dindex = cups.indexOf(destination);
     cups.splice(dindex + 1, 0, ...removed);
