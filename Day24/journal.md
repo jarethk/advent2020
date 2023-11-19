@@ -1,0 +1,5 @@
+Part 1 - ok, so this is a hex grid, which we can coordinate using a 2d array with some odd positional equivalence.  nw is really n, ne is really ne, e and w are really e and w, se is s, and sw is sw.  
+
+Part 2 - now we have a game of life, played for 100 cycles.  From the first input, only the ones that are flipped matter, so run a quick filter first.  Then for each of the tiles that were flipped, do a couple things.  Find all the adjacent cells.  Count the number of adjacent cells that are also flipped, to figure out what to do with this tile.  Then for each of the adjacent cells that aren't flipped, see if they should be flipped by counting their adjacent cells that are flipped.  
+
+I revisited an older day, which already had a game of life algorithm.  Make that a general method, with some callback points to handle the custom rules, and all works.
